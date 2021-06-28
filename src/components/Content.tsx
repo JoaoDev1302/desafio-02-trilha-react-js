@@ -1,12 +1,16 @@
+import { useContext } from 'react'
 import { MovieCard } from "./MovieCard"
+import { MoviesContext } from '../Context'
+import '../styles/content.scss';
 
 export function Content() {
+  const  { movies, selectedGenre }  = useContext(MoviesContext)
+
   return(
     <div className="container">
       <header>
         <span className="category">Categoria:<span> {selectedGenre.title}</span></span>
       </header>
-
       <main>
         <div className="movies-list">
           {movies.map(movie => (
